@@ -1,0 +1,28 @@
+Sampling
+sample(x, size=N, replace=TRUE)
+
+Standard Deviation
+sd()
+
+Standard Error (SE)
+2 * sqrt(p * (1-p)/N)
+se <- sd(X)/sqrt(N)
+Distribtion
+d <- 2p - 1
+
+ESTIMATES
+Estimated Proportion from distribution
+p <- (d_hat+1)/2
+Estimated Standard Error
+SE_hat <- sqrt(X_hat*(1-X_hat)/N)
+Estimated Spread (Difference)
+d_hat <- sum(estimate*sample_size) / sum(sample_size)
+Estimated proportion
+ci <- c(mean(X) - qnorm(0.975)*se, mean(X) + qnorm(0.975)*se)
+
+PLOTTING
+ggplot(aes(x,y)) +
+Histogram
+geom_histogram(binwidth = .01)
+Point
+geom_point()
