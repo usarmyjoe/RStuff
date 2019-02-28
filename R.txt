@@ -1,3 +1,5 @@
+summarize
+
 Sampling
 sample(x, size=N, replace=TRUE)
 
@@ -19,6 +21,15 @@ Estimated Spread (Difference)
 d_hat <- sum(estimate*sample_size) / sum(sample_size)
 Estimated proportion
 ci <- c(mean(X) - qnorm(0.975)*se, mean(X) + qnorm(0.975)*se)
+p-value
+2*(1-pnorm(quantile (0.975,etc), 0, 1))
+
+BAYESIAN 
+B <- sigma ^2/(sigma^2+tau^2)
+posterior distribtion
+E(p|y)=B*mu + (1-B)*Y
+BE(P|y)2=sqrt(1/(1/sigma^2+1/tau^2))
+pnorm(0,exp_value,se)
 
 PLOTTING
 ggplot(aes(x,y)) +
